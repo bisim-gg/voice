@@ -1,0 +1,11 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Voice guide
+    url: https://bisim-gg.github.io/bisim.js/guide/voice/
+    about: Most questions are answered in the voice pages of the bisim.js guide.
+  - name: API reference
+    url: https://bisim-gg.github.io/voice/
+    about: Every class, function and option.
+  - name: Security problem
+    url: https://github.com/bisim-gg/voice/blob/main/SECURITY.md
+    about: Report it privately to security@bisim.gg, not in an issue.

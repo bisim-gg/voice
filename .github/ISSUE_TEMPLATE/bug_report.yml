@@ -1,0 +1,53 @@
+name: Bug report
+description: Something in @bisim/voice does not work as it should.
+labels: [bug]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for taking the time to report a bug. Please do not include your bot token, a voice token or any
+        other secret. Security problems go to security@bisim.gg instead.
+  - type: textarea
+    id: description
+    attributes:
+      label: What happened
+      description: What you did, what you expected, and what happened instead.
+    validations:
+      required: true
+  - type: textarea
+    id: code
+    attributes:
+      label: Code to reproduce it
+      description: The smallest piece of code that shows the problem.
+      render: js
+    validations:
+      required: true
+  - type: textarea
+    id: error
+    attributes:
+      label: Error and debug output
+      description: Paste the full error, and the connection's debug events (joinVoiceChannel with debug true) if you can.
+      render: text
+  - type: textarea
+    id: report
+    attributes:
+      label: Dependency report
+      description: The output of console.log(require('@bisim/voice').generateDependencyReport()).
+      render: text
+    validations:
+      required: true
+  - type: input
+    id: bisimjs
+    attributes:
+      label: bisim.js version
+      placeholder: 0.2.0
+    validations:
+      required: true
+  - type: dropdown
+    id: discordjsvoice
+    attributes:
+      label: Does the same code work with @discordjs/voice on Discord?
+      options:
+        - 'Yes'
+        - 'No'
+        - I have not tried

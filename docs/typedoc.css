@@ -1,0 +1,10 @@
+/* The API reference: long type names wrap on a phone instead of widening the page. */
+.tsd-member-summary-name,
+.tsd-index-link,
+.tsd-signature,
+.tsd-breadcrumb,
+.col-content h1,
+.col-content h2,
+.col-content h3 {
+  overflow-wrap: anywhere;
+}

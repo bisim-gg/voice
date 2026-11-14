@@ -1,0 +1,29 @@
+# CI for the GitLab copy of @bisim/voice (git.vmp.ir/bisim/voice). The primary repository is
+# github.com/bisim-gg/voice; GitLab CE has no pull mirror, so a scheduled pipeline copies it here.
+#
+# Set up once in this project:
+#   - a project access token with the write_repository scope (role Maintainer), stored as the CI/CD variable
+#     MIRROR_PUSH_TOKEN, masked and protected; it is never written in this file;
+#   - a pipeline schedule (CI/CD, Schedules), for example every 15 minutes, on the default branch;
+#   - "Allowed to force push" for Maintainers on protected branches, so the mirror can follow a rewritten
+#     history on GitHub.
+#
+# The runners pull images through the configured mirror, as in the other Bisim projects.
+
+stages: [mirror]
+
+mirror:
+  stage: mirror
+  tags: [linux]
+  image: node:22-alpine
+  variables:
+    GIT_STRATEGY: none
+  before_script:
+    - apk add --no-cache git
+  script:
+    - test -n "$MIRROR_PUSH_TOKEN" || { echo "MIRROR_PUSH_TOKEN is not set"; exit 1; }
+    - git clone --mirror https://github.com/bisim-gg/voice.git source.git
+    - cd source.git
+    - git push --force "https://oauth2:${MIRROR_PUSH_TOKEN}@git.vmp.ir/bisim/voice.git" '+refs/heads/*:refs/heads/*' '+refs/tags/*:refs/tags/*'
+  rules:
+    - if: $CI_PIPELINE_SOURCE == "schedule"

@@ -1,0 +1,22 @@
+name: Feature request
+description: Suggest something @bisim/voice should do.
+labels: [enhancement]
+body:
+  - type: textarea
+    id: problem
+    attributes:
+      label: What you want to do
+      description: The bot you are building and what you cannot do today.
+    validations:
+      required: true
+  - type: textarea
+    id: solution
+    attributes:
+      label: How it could work
+      description: If @discordjs/voice has this feature, name the function, class or option, so @bisim/voice can match it.
+    validations:
+      required: true
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: Alternatives you considered

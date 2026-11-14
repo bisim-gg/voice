@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" role="img" aria-label="bisim.js">
+  <rect width="128" height="128" rx="28.8" fill="#c8f53c"/>
+  <g transform="translate(30.45 24) scale(0.645) translate(-8 -4)" fill="none" stroke="#0f1115" stroke-width="17" stroke-linecap="round">
+    <path d="M27 19V56A33 33 0 0 0 93 56V41"/>
+    <circle cx="60" cy="113.5" r="9.5" fill="#0f1115" stroke="none"/>
+  </g>
+</svg>
