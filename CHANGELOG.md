@@ -6,6 +6,8 @@ All notable changes to @bisim/voice are listed here. The format follows
 
 ## [Unreleased]
 
+## [0.2.0] - 2026-11-15
+
 ### Changed
 
 - The docs say what Bisim now enforces: a bot joins deafened unless it asks to hear (`selfDeaf: false`), and a

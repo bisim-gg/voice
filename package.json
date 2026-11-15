@@ -1,6 +1,6 @@
 {
   "name": "@bisim/voice",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "Voice for Bisim bots: join voice channels, play and receive audio, written the @discordjs/voice way",
   "license": "MIT",
   "author": "Bisim",
