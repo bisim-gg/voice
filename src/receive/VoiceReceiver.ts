@@ -13,7 +13,8 @@ export const SPEAKING_THRESHOLD_DB = -50;
 
 /**
  * Receives what the others in the call say. Join with `selfDeaf: false` to use it: a deafened connection receives
- * nothing.
+ * nothing, and Bisim enforces that on its media server, whatever the code asks for. A bot joins deafened unless it
+ * says otherwise.
  *
  * @example
  * ```js

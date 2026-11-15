@@ -66,12 +66,14 @@ The bot needs View Channel, Connect and Speak in the voice channel.
   `OggOpus`, `WebmOpus`, `Opus` and `Raw`), `demuxProbe`, inline volume, pause, unpause and stop, and the
   `noSubscriber` and `maxMissedFrames` behaviors.
 - **Receiving**: `connection.receiver.speaking` (`start`, `end`) and `receiver.subscribe(userId, { end })`, which
-  gives Opus packets as on Discord (prism-media decodes them unchanged) or, with `mode: 'pcm'`, raw samples.
+  gives Opus packets as on Discord (prism-media decodes them unchanged) or, with `mode: 'pcm'`, raw samples. Join
+  with `selfDeaf: false` to receive: a bot joins deafened, and Bisim's media server sends a deafened bot nothing.
 
 ## How Bisim differs from Discord
 
 A bot sends sound only (no camera, no screen), sits in one voice channel per server (joining another leaves
-the first), and cannot join DM calls. A received stream leaves out quiet stretches, as on Discord. Names keep
+the first), and cannot join DM calls. A bot is deafened unless it asks to hear (`selfDeaf: false`), and the
+server enforces it: everyone in the call sees the deafen mark, and a deafened bot receives no audio at all. A received stream leaves out quiet stretches, as on Discord. Names keep
 discord.js's, except that "Discord" becomes "Bisim": `BisimGatewayAdapterCreator`, `validateBisimOpusHead`.
 
 ## Documentation

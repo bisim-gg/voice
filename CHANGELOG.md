@@ -4,6 +4,14 @@ All notable changes to @bisim/voice are listed here. The format follows
 [Keep a Changelog](https://keepachangelog.com/en/1.1.0/), and the project uses
 [semantic versioning](https://semver.org/).
 
+## [Unreleased]
+
+### Changed
+
+- The docs say what Bisim now enforces: a bot joins deafened unless it asks to hear (`selfDeaf: false`), and a
+  deafened bot receives no audio from the media server, whatever the code asks for. `selfDeaf` already defaulted
+  to `true`, so nothing changes for a bot that follows it.
+
 ## [0.1.0] - 2026-11-14
 
 The first release: voice for Bisim bots, with the API of `@discordjs/voice`.
